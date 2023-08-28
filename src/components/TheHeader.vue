@@ -18,23 +18,38 @@ export default {
 
 <template>
   <div>
-    <div class="container">
+    <div
+      class="container d-flex justify-content-between align-items-center mt-3"
+    >
+      <div><img src="../assets/page-logo.png" alt="" /></div>
       <div class="d-flex s-bar" role="search">
         <input
           v-model="store.search"
           class="form-control me-2"
           type="search"
-          placeholder="Search"
+          placeholder="Cerca"
           aria-label="Search a movie or a tv show"
         />
-        <button @click="moviesList(url)">Search</button>
+        <button class="text-uppercase" @click="moviesList(url)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .s-bar {
-  max-width: 400px;
+  width: 400px;
+}
+
+button {
+  background-color: #dc1a28;
+  border: 1px solid #6f1c28;
+  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px;
+  margin-left: -10px;
 }
 </style>
