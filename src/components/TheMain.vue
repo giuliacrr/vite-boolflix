@@ -37,11 +37,12 @@ export default {
             >
               <div class="card-title text-center">
                 <h4 class="pb-3">
-                  <span class="fw-bold">Titolo:</span> {{ movie.title }}
+                  <span class="fw-bold">{{ movie.title }}</span>
                 </h4>
                 <div class="pb-3">
-                  <span class="fw-bold">Titolo originale: </span>
-                  {{ movie.original_title }}
+                  <span class="fw-bold"
+                    >OG Title: {{ movie.original_title }}</span
+                  >
                 </div>
               </div>
               <div class="card-text">
@@ -50,7 +51,7 @@ export default {
                     class="align-items-center d-flex justify-content-center align-items-center"
                   >
                     <div class="fw-bold me-1">
-                      Lingua Originale:
+                      OG Language:
                       <span class="text-uppercase"
                         >{{ movie.original_language }}
                       </span>
@@ -65,8 +66,13 @@ export default {
                   </div>
                 </div>
                 <div>
-                  <span class="fw-bold">Voto: </span>
-                  {{ movie.vote_average }}/10
+                  <span class="fw-bold">Rating:</span>
+                  <div class="stars-outer">
+                    <div
+                      class="stars-inner"
+                      :style="`width: calc((${movie.vote_average}%/ 10) * 100)`"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -96,10 +102,10 @@ export default {
             >
               <div class="card-title text-center">
                 <h4 class="pb-3">
-                  <span class="fw-bold">Titolo:</span> {{ Tvs.name }}
+                  <span class="fw-bold">{{ Tvs.name }}</span>
                 </h4>
                 <div class="pb-3">
-                  <span class="fw-bold">Titolo originale: </span>
+                  <span class="fw-bold">OG Title: </span>
                   {{ Tvs.original_name }}
                 </div>
               </div>
@@ -109,7 +115,7 @@ export default {
                     class="align-items-center d-flex justify-content-center align-items-center"
                   >
                     <div class="fw-bold me-1">
-                      Lingua Originale:
+                      OG Language:
                       <span class="text-uppercase"
                         >{{ Tvs.original_language }}
                       </span>
@@ -124,8 +130,13 @@ export default {
                   </div>
                 </div>
                 <div>
-                  <span class="fw-bold">Voto: </span>
-                  {{ Tvs.vote_average }}/10
+                  <span class="fw-bold">Rating:</span>
+                  <div class="stars-outer">
+                    <div
+                      class="stars-inner"
+                      :style="`width: calc((${Tvs.vote_average}%/ 10) * 100)`"
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -161,5 +172,26 @@ export default {
 .card:hover .overlay {
   opacity: 1;
   color: white;
+}
+
+//Stars
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
 }
 </stype>

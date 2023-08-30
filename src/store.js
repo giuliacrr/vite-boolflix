@@ -43,3 +43,4 @@ export function tvsList(url) {
     console.log(store.serieTv);
   });
 }
+
