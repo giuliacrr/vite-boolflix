@@ -37,12 +37,15 @@ export default {
             >
               <div class="card-title text-center">
                 <h4 class="pb-3">
-                  <span class="fw-bold">{{ movie.title }}</span>
+                  <span class="fw-bold title-size">{{ movie.title }}</span>
                 </h4>
                 <div class="pb-3">
                   <span class="fw-bold"
                     >OG Title: {{ movie.original_title }}</span
                   >
+                </div>
+                <div class="overview-text">
+                  {{ movie.overview }}
                 </div>
               </div>
               <div class="card-text">
@@ -102,11 +105,14 @@ export default {
             >
               <div class="card-title text-center">
                 <h4 class="pb-3">
-                  <span class="fw-bold">{{ Tvs.name }}</span>
+                  <span class="fw-bold title-size">{{ Tvs.name }}</span>
                 </h4>
                 <div class="pb-3">
                   <span class="fw-bold">OG Title: </span>
                   {{ Tvs.original_name }}
+                </div>
+                <div class="overview-text">
+                  {{ Tvs.overview }}
                 </div>
               </div>
               <div class="card-text">
@@ -172,6 +178,13 @@ export default {
 .card:hover .overlay {
   opacity: 1;
   color: white;
+}
+.overview-text {
+  font-size: 0.8rem;
+}
+
+.title-size {
+  font-size: 1rem;
 }
 
 //Stars
